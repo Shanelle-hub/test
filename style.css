@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head_section{
+    background: #151826;
+}
+ nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+ }
+.nav_menu a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 10px;
+  } 
+  .nav_menu a:hover{
+    color: #00ED66;
+  }
+  .job_descriptn{
+  padding: 20px;
+  margin: 5px;
+  }
+  .name{
+    font-weight: 700;
+    color: #fff;
+    line-height: 128%;
+    letter-spacing: 3.16px;
+  }
