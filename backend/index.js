@@ -22,8 +22,10 @@ app.use(cors({
 })
 );
 
-app.get("/", (req, res) => {
-    res.json({ data: 'hello'});
+app.get("/", async (req, res) => {
+
+    const users = await User.find()
+    res.json({ data: users});
 });
 
 // Backend Ready
@@ -39,7 +41,7 @@ app.post("/create-account", async (req, res) => {
         .json({error: true, message: "Full name is required" })
     };
     if(!email){
-        return res.status(400).json({error: true, message: "Email is require" })
+        return res.status(400).json({error: true, message: "Email is required" })
     };
     if(!password){
         return res
@@ -115,9 +117,12 @@ app.post("/login", async (req, res) => {
 });
 
 // Get user
-app.get("/get-user", AuthenticateToken, async (req, res) => {
-    const { user } = req.user;
-    const isUser = await User.findOne({ _id: user._id});
+app.get("/get-user/", async (req, res) => {
+    // const { user } = req.user;
+    // const {id} = req.url
+    id ="664f6aba08114e96e0192016"
+
+    const isUser = await User.findOne({ _id:id});
 
     if(!isUser){
         return res.sendStatus(401)
